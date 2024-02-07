@@ -1,5 +1,4 @@
 import time
-
 # Declare global variables
 done_before1 = 0
 standard_case = 0
@@ -7,10 +6,26 @@ Abit_AB_PB4 = 0
 Intel_80286_12 = 0
 Matrox_Millennium = 0
 Ram16mb = 0
-StorageHDD500mb = 0
+StorageHDD500mb = 0  # Initialize StorageHDD500mb
 PSU45w = 0
 small_fan = 0
 tutorial1 = 0
+standard_case_price = 10
+Abit_AB_PB4_price = 25
+Intel_80286_12_price = 30
+Matrox_Millennium_price = 15
+Ram16mb_price = 5
+StorageHDD500mb_price = 15
+PSU45w_price = 15
+small_fan_price = 3
+
+
+def get_price1():
+    if tutorial1 == 1:
+        sell_price1 = '118'
+        return sell_price1
+    else:
+        print("idk rn")
 
 
 def start1():
@@ -35,8 +50,32 @@ def start2():
     main_build_func()
 
 
+def tutorial_podium1():
+    if tutorial1 == 1:
+        sell_price1 = 118
+        podium_every_minute1 = sell_price1 / 10
+        print(podium_every_minute1)
+    
+
+
+def tutorial_computer_built1():
+    while True:
+        tutorial_text_thing_idk1 = input("You finished your first computer, you can put it on the podium to generate money over time or sell it right now to be able to but better parts, what do you want to do? (podium for podium, sell for sell) : ")
+        if tutorial_text_thing_idk1.lower() == "sell" or tutorial_text_thing_idk1.lower() == "s":
+            text_thingy_idk_input1 = input(f"The computer you are going to sell is worth {sell_price1} dollars, do you want to sell? ")
+            if text_thingy_idk_input1.lower() == "y" or text_thingy_idk_input1.lower() == "yes":
+                money_idk1 = int(sell_price1)
+                print(f"You have {money_idk1} dollars.")
+                time.sleep(1)
+                print("idk rn)
+            break
+        elif tutorial_text_thing_idk1 == "podium" or tutorial_text_thing_idk1 == "p":
+            tutorial_podium1()
+            break
+
+
 def main_build_func():
-    global done_before1, standard_case, Intel_80286_12, Matrox_Millennium, small_fan, Ram16mb, PSU45w, Abit_AB_PB4
+    global done_before1, standard_case, Intel_80286_12, Matrox_Millennium, small_fan, Ram16mb, PSU45w, Abit_AB_PB4, StorageHDD500mb
     if tutorial1 == 1:
         if done_before1 == 0 and standard_case == 1:
             tutorial_prompt3 = input("Finally, there are 8 different components you have right now, we supplied you with 1 of each. These include, Cases, Motherboards, CPUs, GPUs, RAM, Memory, PSUs, and Fans. ")
@@ -73,9 +112,13 @@ def main_build_func():
                     else:
                         cpu_input_thing1_idk = input(f"You have {Intel_80286_12} CPU, labelled, 'Intel 80286 12' do you want to use it? ")
                         if cpu_input_thing1_idk.lower() == "yes" or cpu_input_thing1_idk.lower() == "y":
-                            print("The Intel 80286 12 has been inserted and secured onto the motherboard")
-                            Intel_80286_12 = 0
-                            time.sleep(2)
+                            if Intel_80286_12 == 0:
+                                print("You don't have a CPU")
+                                time.sleep(1)
+                            else:
+                                print("The Intel 80286 12 has been inserted and secured onto the motherboard")
+                                Intel_80286_12 = 0
+                                time.sleep(2)
                 elif actual_prompt.lower() == "quit" or actual_prompt.lower() == "q" or actual_prompt.lower() == "x":
                     break
                 elif actual_prompt.lower() == "gpu" or actual_prompt.lower() == "gpus":
@@ -98,7 +141,7 @@ def main_build_func():
                             Ram16mb = 0
                             print("The 16 MB of RAM was placed and secured onto the motherboard")
                             if Abit_AB_PB4 == 0 and Intel_80286_12 == 0 and small_fan == 0 and Matrox_Millennium == 0 and Ram16mb == 0 and PSU45w == 0 and StorageHDD500mb == 0:
-                                print("idk rn lol")
+                                tutorial_computer_built1()
                                 break
                             else:
                                 time.sleep(2)
@@ -120,6 +163,9 @@ def main_build_func():
                         print("The Small Fan was placed and secured into the computer case")
                         small_fan = 0
                         time.sleep(2)
+                elif actual_prompt.lower() == "skip":
+                    tutorial_computer_built1()
+                    break
 
 
 start1()
