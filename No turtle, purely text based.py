@@ -198,7 +198,7 @@ def main_build_func():
                         Abit_AB_PB4 = 0
                         time.sleep(2)
                         if Abit_AB_PB4 == 0 and Intel_80286_12 == 0 and small_fan == 0 and Matrox_Millennium == 0 and Ram16mb == 0 and PSU45w == 0 and StorageHDD500mb == 0:
-                            print("idk rn")
+                            tutorial_computer_built1()
                             break
                 elif actual_prompt.lower() == "cpu" or actual_prompt.lower() == "cpus":
                     if Abit_AB_PB4 == 1:
@@ -213,7 +213,11 @@ def main_build_func():
                             else:
                                 print("The Intel 80286 12 has been inserted and secured onto the motherboard")
                                 Intel_80286_12 = 0
-                                time.sleep(2)
+                                if Abit_AB_PB4 == 0 and Intel_80286_12 == 0 and small_fan == 0 and Matrox_Millennium == 0 and Ram16mb == 0 and PSU45w == 0 and StorageHDD500mb == 0:
+                                    tutorial_computer_built1()
+                                    break
+                                else:
+                                    time.sleep(2)
                 elif actual_prompt.lower() == "quit" or actual_prompt.lower() == "q" or actual_prompt.lower() == "x":
                     break
                 elif actual_prompt.lower() == "gpu" or actual_prompt.lower() == "gpus":
@@ -225,7 +229,11 @@ def main_build_func():
                         if gpu_input_thing1.lower() == "yes" or gpu_input_thing1.lower() == "y":
                             print("The Matrox Millennium has been placed and secured onto the motherboard")
                             Matrox_Millennium = 0
-                            time.sleep(2)
+                            if Abit_AB_PB4 == 0 and Intel_80286_12 == 0 and small_fan == 0 and Matrox_Millennium == 0 and Ram16mb == 0 and PSU45w == 0 and StorageHDD500mb == 0:
+                                tutorial_computer_built1()
+                                break
+                            else:
+                                time.sleep(2)
                 elif actual_prompt.lower() == "ram" or actual_prompt.lower() == "rams":
                     if Abit_AB_PB4 == 1:
                         print("You can't place RAM without a motherboard")
@@ -245,19 +253,31 @@ def main_build_func():
                     if mem_input_thing1.lower() == "y" or mem_input_thing1.lower() == "yes":
                         print("The 500 MB HDD was placed and secured into the computer case.")
                         StorageHDD500mb = 0
-                        time.sleep(2)
+                        if Abit_AB_PB4 == 0 and Intel_80286_12 == 0 and small_fan == 0 and Matrox_Millennium == 0 and Ram16mb == 0 and PSU45w == 0 and StorageHDD500mb == 0:
+                            tutorial_computer_built1()
+                            break
+                        else:
+                            time.sleep(2)
                 elif actual_prompt.lower() == "power supply" or actual_prompt.lower() == "psu" or actual_prompt.lower() == "power supplies" or actual_prompt.lower() == "psus":
                     psu_input_thing1 = input(f"You have {PSU45w} PSU, labelled, 'Power Supply, 45 W' do you want to use it? ")
                     if psu_input_thing1.lower() == "y" or psu_input_thing1.lower() == "yes":
                         print("The Power Supply was placed and secured into the computer case")
                         PSU45w = 0
-                        time.sleep(2)
+                        if Abit_AB_PB4 == 0 and Intel_80286_12 == 0 and small_fan == 0 and Matrox_Millennium == 0 and Ram16mb == 0 and PSU45w == 0 and StorageHDD500mb == 0:
+                            tutorial_computer_built1()
+                            break
+                        else:
+                            time.sleep(2)
                 elif actual_prompt.lower() == "fan" or actual_prompt.lower() == "fans":
                     fan_input_thing1 = input(f"You have {small_fan} fan, labelled, 'Small Fan' do you want to use it? ")
                     if fan_input_thing1.lower() == "y" or fan_input_thing1.lower() == "yes":
                         print("The Small Fan was placed and secured into the computer case")
                         small_fan = 0
-                        time.sleep(2)
+                        if Abit_AB_PB4 == 0 and Intel_80286_12 == 0 and small_fan == 0 and Matrox_Millennium == 0 and Ram16mb == 0 and PSU45w == 0 and StorageHDD500mb == 0:
+                            tutorial_computer_built1()
+                            break
+                        else:
+                            time.sleep(2)
                 elif actual_prompt.lower() == "skip":
                     tutorial_computer_built1()
                     break
