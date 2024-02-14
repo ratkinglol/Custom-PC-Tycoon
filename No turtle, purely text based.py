@@ -33,6 +33,17 @@ riva_128_price = 180
 Ram32mb_price = 20
 Ram64mb_price = 40
 
+def debug_start_list():
+    #for debugging purposes only, not a game mechanic
+    print(f"Standard Case - {standard_case}")
+    print(f"Motherboard - {Abit_AB_PB4}")
+    print(f"CPU - {Intel_80286_12}")
+    print(f"GPU - {Matrox_Millennium}")
+    print(f"RAM - {Ram16mb}")
+    print(f"Memory - {StorageHDD500mb}")
+    print(f"PSU - {PSU400w}")
+    print(f"Fan - {small-fan}")
+
 def get_price1():
     global sell_price1
     if tutorial1 == 1:
