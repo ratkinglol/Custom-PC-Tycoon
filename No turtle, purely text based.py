@@ -7,6 +7,8 @@ Intel_80286_12 = 0
 Matrox_Millennium = 0
 Ram16mb = 0
 StorageHDD500mb = 0  # Initialize StorageHDD500mb
+StorageHDD600mb = 0
+StorageSSD500mb = 0
 PSU45w = 0
 small_fan = 0
 tutorial1 = 0
@@ -16,6 +18,8 @@ Intel_80286_12_price = 30
 Matrox_Millennium_price = 15
 Ram16mb_price = 10
 StorageHDD500mb_price = 15
+StorageHDD600mb_price = 20
+StorageSSD500m_price = 20
 PSU45w_price = 15
 small_fan_price = 3
 sell_price1 = 0
@@ -67,53 +71,72 @@ def tutorial_done1():
         time.sleep(1)
         print("You enter the electronics store.")
         time.sleep(1)
-        useless_text_thing2 = input("You see 8 sections of the store, labelled, Cases, Motherboards, CPUs, GPUs, RAM, Memory, PSUs, and Fans, where would you like to go? ")
-        if useless_text_thing2.lower() == "case" or useless_text_thing2.lower() == "cases" or useless_text_thing2.lower() == "c":
-            print("Currently there are 3 different types of cases in stock, Standard Cases, Clear Cases, And Ventilated Cases.")
-            time.sleep(2)
-            useless_text_thing3 = input(f"Which one do you want? (Standard case is {standard_case_price} dollars, the Clear Case is {clear_case_price} dollars, the Ventilated Case is {ventilated_case_price} dollars) : ")
-            if useless_text_thing3.lower() == "standard case" or useless_text_thing3.lower() == "standard" or useless_text_thing3.lower() == "sc":
-                if money_idk1 >= standard_case_price:
-                    money_idk1 = money_idk1 - standard_case_price
-                    print("You bought the Standard Case")
-                    time.sleep(1)
-                    print('  ________')
-                    print(' /       /|')
-                    print('/_______/ |')
-                    print('|  ___  | |')
-                    print('| |   | | |')
-                    print('| |___| | |')
-                    print('|       | |')
-                    print('|_______|/')
-                    print('Computer Case Bought!')
-                    time.sleep(0.75)
-                    standard_case = standard_case + 1
-                    print(f"New balance is {money_idk1} dollars")
-        elif useless_text_thing2.lower() == "cpu" or useless_text_thing2.lower() == "cpus" or useless_text_thing2.lower() == "c":
-            print("Currently there are 3 different CPUs in stock, the Intel 80286 12, ERROR:UNKNOWN, and ERROR:UNKNOWN.")
-            time.sleep(2)
-            useless_text_thing4 = input(f"Which one do you want? (The Intel 80286 12 is {Intel_80286_12_price} dollars) : ")
-            if useless_text_thing4.lower() == "intel 80286 12" or useless_text_thing4.lower() == "intel" or useless_text_thing4.lower() == "intel 80286" or useless_text_thing4.lower() == "i81":
-                if money_idk1 >= Intel_80286_12_price:
-                    money_idk1 = money_idk1 - Intel_80286_12_price
-                    print("You bought the Intel 80286 12.")
-        elif useless_text_thing2.lower() == "gpu" or useless_text_thing2.lower() == "gpus" or useless_text_thing2.lower() == "g":
-            print("Currently there are 3 different GPUs in stock, the Matrox Millennium, the STG-2000, and the Riva 128")
-            time.sleep(2)
-            useless_text_thing5 = input(f"Which one do you want? (the Matrox Millennium is {Matrox_Millennium_price} dollars, the STG 2000 is {stg_2000_price} dollars, and the Riva 128 is {riva_128_price} dollars) : ")
-            if useless_text_thing5.lower() == "matrox millennium" or useless_text_thing5.lower() == "matrox" or useless_text_thing5.lower() == "millennium" or useless_text_thing5.lower() == "mm":
-                if money_idk1 >= Matrox_Millennium_price:
-                    money_idk1 = money_idk1 - Matrox_Millennium_price
-                    print("You bought the Matrox Millennium.")
-        elif useless_text_thing2.lower() == "ram" or useless_text_thing2.lower() == "random access memory" or useless_text_thing2.lower() == "r":
-            print("Currently there are 3 different types of RAM in stock, 16 MB of RAM, 32 MB of RAM, or 64 GB of RAM")
-            time.sleep(2)
-            useless_text_thing6 = input(f"Which one do you want (16 MB of RAM is {Ram16mb_price} dollars, 32 MB of Ram is {Ram32mb_price} dollars, and 64 MB of RAM is {Ram64mb_price} dollars) : ")
-            if useless_text_thing6.lower() == "16 mb ram" or useless_text_thing6.lower() == "16" or useless_text_thing6.lower() == "ram 16" or useless_text_thing6.lower() == "ram 16 mb" or useless_text_thing6.lower() == "16 mb" or useless_text_thing6.lower() == "1mr":
-                if money_idk1 >= Ram16mb_price:
-                    money_idk1 = money_idk1 - Ram16mb_price
-                    print("You bought 16 MB of RAM")
-                    time.sleep(1)
+        while True:
+            useless_text_thing2 = input("You see 8 sections of the store, labelled, Cases, Motherboards, CPUs, GPUs, RAM, Memory, PSUs, and Fans, where would you like to go? ")
+            if useless_text_thing2.lower() == "case" or useless_text_thing2.lower() == "cases" or useless_text_thing2.lower() == "c":
+                print("Currently there are 3 different types of cases in stock, Standard Cases, Clear Cases, And Ventilated Cases.")
+                time.sleep(2)
+                useless_text_thing3 = input(f"Which one do you want? (Standard case is {standard_case_price} dollars, the Clear Case is {clear_case_price} dollars, the Ventilated Case is {ventilated_case_price} dollars) : ")
+                if useless_text_thing3.lower() == "standard case" or useless_text_thing3.lower() == "standard" or useless_text_thing3.lower() == "sc":
+                    if money_idk1 >= standard_case_price:
+                        money_idk1 = money_idk1 - standard_case_price
+                        standard_case = standard_case + 1
+                        print("You bought the Standard Case")
+                        time.sleep(1)
+                        print('  ________')
+                        print(' /       /|')
+                        print('/_______/ |')
+                        print('|  ___  | |')
+                        print('| |   | | |')
+                        print('| |___| | |')
+                        print('|       | |')
+                        print('|_______|/')
+                        print('Computer Case Bought!')
+                        time.sleep(0.75)
+                        standard_case = standard_case + 1
+                        print(f"New balance is {money_idk1} dollars")
+            elif useless_text_thing2.lower() == "cpu" or useless_text_thing2.lower() == "cpus" or useless_text_thing2.lower() == "c":
+                print("Currently there are 3 different CPUs in stock, the Intel 80286 12, ERROR:UNKNOWN, and ERROR:UNKNOWN.")
+                time.sleep(2)
+                useless_text_thing4 = input(f"Which one do you want? (The Intel 80286 12 is {Intel_80286_12_price} dollars) : ")
+                if useless_text_thing4.lower() == "intel 80286 12" or useless_text_thing4.lower() == "intel" or useless_text_thing4.lower() == "intel 80286" or useless_text_thing4.lower() == "i81":
+                    if money_idk1 >= Intel_80286_12_price:
+                        money_idk1 = money_idk1 - Intel_80286_12_price
+                        Intel_80286_12 = Intel_80286_12 + 1
+                        print("You bought the Intel 80286 12.")
+            elif useless_text_thing2.lower() == "gpu" or useless_text_thing2.lower() == "gpus" or useless_text_thing2.lower() == "g":
+                print("Currently there are 3 different GPUs in stock, the Matrox Millennium, the STG-2000, and the Riva 128")
+                time.sleep(2)
+                useless_text_thing5 = input(f"Which one do you want? (the Matrox Millennium is {Matrox_Millennium_price} dollars, the STG 2000 is {stg_2000_price} dollars, and the Riva 128 is {riva_128_price} dollars) : ")
+                if useless_text_thing5.lower() == "matrox millennium" or useless_text_thing5.lower() == "matrox" or useless_text_thing5.lower() == "millennium" or useless_text_thing5.lower() == "mm":
+                    if money_idk1 >= Matrox_Millennium_price:
+                        money_idk1 = money_idk1 - Matrox_Millennium_price
+                        Matrox_Millennium = Matrox_Millennium + 1
+                        print("You bought the Matrox Millennium.")
+            elif useless_text_thing2.lower() == "ram" or useless_text_thing2.lower() == "random access memory" or useless_text_thing2.lower() == "r":
+                print("Currently there are 3 different types of RAM in stock, 16 MB of RAM, 32 MB of RAM, or 64 GB of RAM")
+                time.sleep(2)
+                useless_text_thing6 = input(f"Which one do you want (16 MB of RAM is {Ram16mb_price} dollars, 32 MB of Ram is {Ram32mb_price} dollars, and 64 MB of RAM is {Ram64mb_price} dollars) : ")
+                if useless_text_thing6.lower() == "16 mb ram" or useless_text_thing6.lower() == "16" or useless_text_thing6.lower() == "ram 16" or useless_text_thing6.lower() == "ram 16 mb" or useless_text_thing6.lower() == "16 mb" or useless_text_thing6.lower() == "1mr":
+                    if money_idk1 >= Ram16mb_price:
+                        money_idk1 = money_idk1 - Ram16mb_price
+                        Ram16mb = Ram16mb + 1
+                        print("You bought 16 MB of RAM")
+                        time.sleep(1)
+            elif useless_text_thing2.lower() == "mem" or useless_text_thing2.lower() == "memory" or useless_text_thing2.lower() == "hdd" or useless_text_thing.lower() == "ssd":
+                print("Currently there are 3 different types of memory in stock, 500 MB HDD, 600 MB HDD, And 500 MB SSD")
+                time.sleep(2)
+                useless_text_thing7 = input(f"Which one do you want? (500 MB HDD is {StorageHDD500mb_price} dollars, the 600 MB HDD is {StorageHDD600mb_price} dollars, and the 500 MB HDD is {StorageSSD500mb_price} dollars.) : ")
+                if useless_text_thing7.lower() == "500mbhdd" or useless_text_thing7.lower() == "hdd500mb" or useless_text_thing7.lower() == "500 mb hdd" or useless_text_thing7.lower() == "hdd 500 mb":
+                    if money_idk1 >= StorageHDD500mb_price:
+                        money_idk1 = money_idk1 - StorageHDD500mb_price
+                        StorageHDD500mb = StorageHDD500mb + 1
+                        print("You bought a 500 MB HDD.")
+                        time.sleep(1)
+            elif useless_text_thing2.lower() == "q" or useless_text_thing2.lower() == "quit":
+                print("Leaving electronics store.")
+                time.sleep(1.25)
+                break
     else:
         print("idk rn")
     
