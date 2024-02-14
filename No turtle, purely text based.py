@@ -9,7 +9,7 @@ Ram16mb = 0
 StorageHDD500mb = 0  # Initialize StorageHDD500mb
 StorageHDD600mb = 0
 StorageSSD500mb = 0
-PSU45w = 0
+PSU400w = 0
 small_fan = 0
 tutorial1 = 0
 standard_case_price = 10
@@ -19,8 +19,10 @@ Matrox_Millennium_price = 15
 Ram16mb_price = 10
 StorageHDD500mb_price = 15
 StorageHDD600mb_price = 20
-StorageSSD500m_price = 20
-PSU45w_price = 15
+StorageSSD500mb_price = 20
+PSU400w_price = 15
+PSU400w_silver_price = 25
+PSU400w_gold_price = 50
 small_fan_price = 3
 sell_price1 = 0
 money_idk1 = 0
@@ -53,10 +55,11 @@ def ram_ascii_art1():
     print('.@.....@@@-......=%-...--+=.....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-.@.')
     print('.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.')
     print('.@@@@#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@..@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.')
+    # this is for use later ^^^
 
 
 def tutorial_done1():
-    global money_idk1, standard_case
+    global money_idk1, standard_case, Abit_AB_PB4, Intel_80286_12, StorageHDD500mb, Ram16mb, Matrox_Millennium, PSU400w, small_fan
     useless_text_thing1 = input("There is 1 place you can go currently, the electronics store. Would you like to go there? ")
     if useless_text_thing1.lower() == "y":
         print("You go to the electronics store.")
@@ -123,7 +126,7 @@ def tutorial_done1():
                         Ram16mb = Ram16mb + 1
                         print("You bought 16 MB of RAM")
                         time.sleep(1)
-            elif useless_text_thing2.lower() == "mem" or useless_text_thing2.lower() == "memory" or useless_text_thing2.lower() == "hdd" or useless_text_thing.lower() == "ssd":
+            elif useless_text_thing2.lower() == "mem" or useless_text_thing2.lower() == "memory" or useless_text_thing2.lower() == "hdd" or useless_text_thing2.lower() == "ssd":
                 print("Currently there are 3 different types of memory in stock, 500 MB HDD, 600 MB HDD, And 500 MB SSD")
                 time.sleep(2)
                 useless_text_thing7 = input(f"Which one do you want? (500 MB HDD is {StorageHDD500mb_price} dollars, the 600 MB HDD is {StorageHDD600mb_price} dollars, and the 500 MB HDD is {StorageSSD500mb_price} dollars.) : ")
@@ -133,10 +136,42 @@ def tutorial_done1():
                         StorageHDD500mb = StorageHDD500mb + 1
                         print("You bought a 500 MB HDD.")
                         time.sleep(1)
+            elif useless_text_thing2.lower() == "motherboard" or useless_text_thing2.lower() == "motherboards" or useless_text_thing2.lower() == "mb":
+                print("Currently there are 3 different types of motherboard(s) in stock, the Abit AB PB4, the (not coded yet), and the (not coded yet)")
+                time.sleep(2)
+                useless_text_thing8 = input(f"Which one do you want? (The Abit AB PB4 is {Abit_AB_PB4_price} dollars) : ")
+                if useless_text_thing8.lower() == "abit ab pb4" or useless_text_thing8.lower() == "abit" or useless_text_thing8.lower() == "ab pb4":
+                    if money_idk1 >= Abit_AB_PB4_price:
+                        money_idk1 = money_idk1 - Abit_AB_PB4_price
+                        Abit_AB_PB4 = Abit_AB_PB4 + 1
+                        print("You bought an Abit AB PB4 Motherboard")
+                        time.sleep(1)
             elif useless_text_thing2.lower() == "q" or useless_text_thing2.lower() == "quit":
                 print("Leaving electronics store.")
                 time.sleep(1.25)
                 break
+            elif useless_text_thing2.lower() == "psu" or useless_text_thing2.lower() == "psus" or useless_text_thing2.lower() == "power supply" or useless_text_thing2.lower() == "power supplies" or useless_text_thing2.lower() == "power supply unit" or useless_text_thing2.lower() == "power supply units":
+                print("Currently there are 3 different types of Power Supplies in stock, bronze 400w, silver 400w, and gold 400w")
+                time.sleep(2)
+                useless_text_thing9 = input(f"Which one do you want? (The bronze 400w is {PSU400w_price} dollars, the silver 400w is {PSU400w_silver_price} dollars and the gold 400w is {PSU400w_gold_price} dollars) : ")
+                if useless_text_thing9.lower() == "bronze" or useless_text_thing9.lower() == "bronze 400w" or useless_text_thing9.lower() == "bronze 400 w" or useless_text_thing9.lower() == "400w bronze":
+                    if money_idk1 >= PSU400w_price:
+                        money_idk1 = money_idk1 - PSU400w_price
+                        PSU400w = PSU400w + 1
+                        print("You bought a Bronze 400W Power Supply")
+                        time.sleep(1.25)
+            elif useless_text_thing2.lower() == "fan" or useless_text_thing2.lower() == "fans" or useless_text_thing2.lower() == "cooling":
+                print("Currently there is 1 type of fan in stock, small fan")
+                time.sleep(1.5)
+                useless_text_thing10 = input(f"Which one do you want? (the small fan is {small_fan_price} dollars) : ")
+                if useless_text_thing10 == "small fan" or useless_text_thing10 == "small":
+                    if money_idk1 >= small_fan_price:
+                        money_idk1 = money_idk1 - small_fan_price
+                        small_fan = small_fan + 1
+                        print("You bought a Small Fan")
+                        time.sleep(1)
+            else:
+                pass
     else:
         print("idk rn")
     
@@ -157,7 +192,7 @@ def start2():
     Matrox_Millennium = 1
     Ram16mb = 1
     StorageHDD500mb = 1
-    PSU45w = 1
+    PSU400w = 1
     small_fan = 1
     done_before1 = 0
     main_build_func()
